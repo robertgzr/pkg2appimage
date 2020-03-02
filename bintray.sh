@@ -17,7 +17,7 @@ if [ "${BINTRAY_API_KEY}" == "" ] ; then
   exit 0
 fi
 
-PCK_NAME="$(basename "$1")"
+PCK_NAME="${PCK_NAME:-$(basename "$1")}"
 BINTRAY_USER="${BINTRAY_USER:-probono}"
 BINTRAY_API_KEY="$BINTRAY_API_KEY" # env
 BINTRAY_REPO="${BINTRAY_REPO:-AppImages}"

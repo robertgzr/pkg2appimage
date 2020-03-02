@@ -53,7 +53,7 @@ fi
 which curl >/dev/null || exit 1
 which bsdtar >/dev/null || exit 1 # https://github.com/libarchive/libarchive/wiki/ManPageBsdtar1 ; isoinfo cannot read zisofs
 which grep >/dev/null || exit 1
-which zsyncmake >/dev/null || exit 1
+which zsyncmake >/dev/null || true
 
 # Do not upload artefacts generated as part of a pull request
 if [ ! -z "$TRAVIS_PULL_REQUEST" ] ; then

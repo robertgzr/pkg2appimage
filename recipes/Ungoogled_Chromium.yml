@@ -44,6 +44,7 @@ script:
   - "${HERE}"/opt/google/chrome/chrome --password-store=basic $@
   - EOF
   - chmod a+x ./AppRun
+  - sed -i -e 's|--password-store=basic|--password-store=none|' AppRun
 #  - mkdir -p opt/google/chrome/default_apps/
 #  - wget "https://raw.githubusercontent.com/chromium/chromium/2ca8c5037021c9d2ecc00b787d58a31ed8fc8bcb/chrome/browser/resources/default_apps/external_extensions.json" -O opt/google/chrome/default_apps/external_extensions.json
 #  - sed -i -e 's|// Drive extension|"cs_extension_id" : { "external_crx": "uBlock0.crx", "external_version": "cs_extension_version" },|g' opt/google/chrome/default_apps/external_extensions.json

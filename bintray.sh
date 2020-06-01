@@ -101,7 +101,7 @@ if [ "$IS_AN_APPIMAGE" ] ; then
   fi
 fi
 
-IS_TYPE2_APPIMAGE=$(dd if="$FILE" bs=1 skip=8 count=3 | xxd -u -ps | grep -q 414902 && echo 1 || true)
+IS_TYPE2_APPIMAGE=$(dd if="$FILE" bs=1 skip=8 count=3 | hexdump -e '16/1 "%02x" "\n"' | grep -q 414902 && echo 1 || true)
 if [ "$IS_TYPE2_APPIMAGE" ] ; then
   ./"$FILE" --appimage-mount &
   AIPID=$?

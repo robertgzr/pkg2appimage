@@ -14,9 +14,9 @@ app: Spotify
 
 ingredients:
   package: spotify-client
-  dist: oldstable
+  dist: sid
   sources:
-    - deb http://deb.debian.org/debian/ oldstable main
+    - deb http://deb.debian.org/debian/ unstable main
   script:
     - DEB=$(wget http://repository.spotify.com/pool/non-free/s/spotify-client/ -O - | grep deb | cut -d ">" -f 2 | cut -d "<" -f 1 | grep amd64.deb | sort --version-sort -r | head -n 1)
     - URL="http://repository.spotify.com/pool/non-free/s/spotify-client/$DEB"

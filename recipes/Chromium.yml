@@ -6,6 +6,7 @@ ingredients:
     - wget 'https://download-chromium.appspot.com/dl/Linux_x64?type=snapshots' -O chrome-linux.zip
     - unzip chrome-linux.zip
     - echo $VERSION
+    - export ARCH=x86_64
 
 script:
   - echo $VERSION

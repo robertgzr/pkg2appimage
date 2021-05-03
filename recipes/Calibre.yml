@@ -6,8 +6,8 @@ app: Calibre
 
 ingredients:
   script:
-    - VERSION=3.48.0 # $(wget -q http://code.calibre-ebook.com/latest -O -)
-    - wget -c https://download.calibre-ebook.com/3.48.0/calibre-3.48.0-x86_64.txz
+    - VERSION=$(wget -q http://code.calibre-ebook.com/latest -O -)
+    - wget -c https://download.calibre-ebook.com/$VERSION/calibre-$VERSION-x86_64.txz
     # wget -c https://calibre-ebook.com/dist/linux64 --trust-server-names
     - echo $VERSION > VERSION
 

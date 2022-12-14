@@ -7,12 +7,12 @@ app: Calibre
 ingredients:
   script:
     - VERSION=$(wget -q http://code.calibre-ebook.com/latest -O -)
-    - wget -c https://download.calibre-ebook.com/$VERSION/calibre-$VERSION-x86_64.txz
+    - wget -c https://download.calibre-ebook.com/$VERSION/calibre-$VERSION-x86_64.txz -O calibre.tar.xz
     # wget -c https://calibre-ebook.com/dist/linux64 --trust-server-names
     - echo $VERSION > VERSION
 
 script:
-  - ( cd usr/bin ; tar xf ../../../calibre-*.txz )
+  - ( cd usr/bin ; tar xJf ../../../calibre.tar.xz ; rm ../../../calibre.tar.xz; )
   - cp usr/bin/resources/content-server/calibre.png .
   - cat > calibre.desktop <<EOF
   - [Desktop Entry]

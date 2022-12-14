@@ -1,6 +1,6 @@
 # Beware: only meant for use with pkg2appimage-with-docker
 
-FROM debian:buster
+FROM debian:buster-slim
 
 ENV DEBIAN_FRONTEND=noninteractive \
     DOCKER_BUILD=1
@@ -25,6 +25,8 @@ RUN set -ex; \
 RUN set -ex; \
     apt-get update && \
     apt-get install -y \
-        unzip
+        unzip \
+        jq \
+        rpm2cpio cpio
 
 WORKDIR /workspace
